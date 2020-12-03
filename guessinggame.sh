@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
-correct=0
+fileNum=$(ls | wc -l)
 
 function guessFileNumber {
-    if [[ $1 -eq $(ls | wc -l) ]]
-    then
-        let correct=1
-    fi
+    while true
+    do
+        echo "How many files are in the current directory?"
+        read num
+
+        if [[ $num -eq $fileNum ]]
+        then
+            echo "Congratulations!"
+            break
+        elif [[ $num -lt $fileNum ]]
+        then
+            echo "Your guess is too low! Please try again."
+        else
+            echo "Your guess is too high! Please try again."
+        fi
+    done
 }
 
-while [[ $correct -eq 0 ]]
-do
-    echo "How many files are in the current directory?"
-    read num
-    guessFileNumber $num
-    if [[ $correct -eq 1 ]]
-    then
-        echo "Congratulations!"
-    else
-        echo "Incorrect! Please try again."
-    fi
-done
+guessFileNumber

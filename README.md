@@ -5,6 +5,6 @@ This is a bash script to ask you to guess how many files are in the current dire
 bash guessinggame.sh 
  ```
 ## Acknowledgements
-This README was created at 2020/12/02 01:52:13 
+This README was created at 2020/12/03 21:03:46 
 
-23 lines are in guessinggame.sh.
+24 lines are in guessinggame.sh.
